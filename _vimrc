@@ -30,14 +30,8 @@
     set nowb
     set noswapfile
 
-    "Set to auto read when a file is changed from the outside
-    set autoread
-
     "Have the mouse enabled all the time:
     set mouse=a
-
-    " No messy swap files
-    set directory=/var/tmp,/tmp
 
     "Set 7 lines to the curors - when moving vertical..
     set so=7
@@ -50,9 +44,6 @@
 
     "The commandbar is 2 high
     set cmdheight=2
-
-    "Show line number
-    set number
 
     "Change buffer - without saving
     set hid
@@ -85,14 +76,14 @@
     set hlsearch
 
     "Highlight current line in insert mode.
-    au InsertLeave * se nocul
-    au InsertEnter * se cul
+    "au InsertLeave * se nocul
+    "au InsertEnter * se cul
 
     "Indent stuff
     set autoindent
     set smartindent
 
-    set shell=/bin/zsh
+    set shell=/bin/bash
 
     if version >= 700
         set completeopt=menu,longest,preview
@@ -104,7 +95,7 @@
 
     set shiftwidth=4
     set softtabstop=4
-    set tabstop=8
+    set tabstop=4
     set lbr
 "    set tw=79
     set smarttab
@@ -116,19 +107,19 @@
 
     if has("gui_running")
         " Remove menu bar
-        set guioptions-=m
+        "set guioptions-=m
         " Remove toolbar
-        set guioptions-=T
+        "set guioptions-=T
         " Style and typo
-        set guifont=Inconsolata\ 9.5
-        colorscheme fruity
-        set background=dark
+        set guifont=Monospace\ 11
+        colorscheme inkpot
+        "set background=dark
     elseif &term=~"linux"
         set t_Co=16
-        colorscheme peachpuff
+        colorscheme inkpot
     else
         set t_Co=256
-        colorscheme inkpot
+        colorscheme inkpot 
     endif
 
     set encoding=utf8
@@ -159,17 +150,12 @@
     map <space> /
 
     "Quit warn if changed
-    map <ESC><ESC> :q<CR>
-    "Quit drop changes
-    map <F10> :q!<CR>
+    "map <ESC><ESC> :q<CR>
+    "Quit drop changes - dangerous
+    "map <F10> :q!<CR>
     "backspace delete tabs!
     set backspace=indent,eol,start
 
-    " Setuje srpski
-"    nmap <F7> :set keymap=serbian-latin<CR>
-    " Vraca na default
-"    nmap <F8> :set keymap=<CR>
-   
 "    if has("gui_running")
 "        source $VIMRUNTIME/mswin.vim    
 "    endif
