@@ -31,7 +31,7 @@
     set noswapfile
 
     "Have the mouse enabled all the time:
-    set mouse=a
+    "set mouse=a
 
     "Set 7 lines to the curors - when moving vertical..
     set so=7
@@ -114,12 +114,15 @@
         set guifont=Monospace\ 11
         colorscheme inkpot
         "set background=dark
+        set t_ut=
     elseif &term=~"linux"
         set t_Co=16
+        set t_ut=
         colorscheme inkpot
     else
         set t_Co=256
-        colorscheme inkpot 
+        set t_ut=
+        colorscheme inkpot
     endif
 
     set encoding=utf8
