@@ -396,7 +396,8 @@
     " => Python
     au BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class 
     au BufWritePre *.py normal m`:%s/\s\+$//e ``
-    au BufRead,BufNewFile *.py set textwidth=79
+    "au BufRead,BufNewFile *.py set textwidth=79 "don't want to break long
+    "lines in python
     au FileType python set omnifunc=pythoncomplete#Complete
 
     " If you want all Python highlightings above:
